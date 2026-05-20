@@ -1,0 +1,70 @@
+:root {
+    --bg-color: #0d0d12;
+    --text-color: #ffffff;
+    --accent: #3b82f6;
+    --pitch-color: #fbbf24;
+}
+
+body, html {
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    background-color: var(--bg-color); color: var(--text-color);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+.overlay {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: var(--bg-color); z-index: 10;
+    backdrop-filter: blur(5px); transition: opacity 0.3s; text-align: center;
+}
+
+.hidden { display: none !important; opacity: 0; pointer-events: none; }
+
+#ui { position: absolute; top: 0; left: 0; width: 100vw; height: 100vh; }
+#viz-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+
+#info {
+    position: absolute; top: 20px; right: 20px;
+    z-index: 2; pointer-events: none;
+    display: flex; flex-direction: column; align-items: flex-end; justify-content: center;
+    background: rgba(13, 13, 18, 0.7);
+    padding: 1.5rem 2rem; border-radius: 16px; backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+#note {
+    font-size: 4rem; font-weight: 800; line-height: 1; margin: 0;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: color 0.1s;
+}
+
+#freq {
+    font-size: 1.25rem; color: #aaa; margin-top: 8px; font-weight: 300; letter-spacing: 1px;
+}
+
+h1 { margin-bottom: 0.5rem; font-size: 3rem; font-weight: 800; }
+p { color: #888; font-size: 1.2rem; margin-bottom: 2rem; max-width: 600px; line-height: 1.5; }
+a { color: #60a5fa; }
+
+button {
+    padding: 1rem 2.5rem; font-size: 1.2rem; font-weight: 600;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 50px; cursor: pointer;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+    transition: transform 0.1s, background 0.2s;
+}
+
+button:hover { background: #2563eb; transform: scale(1.05); }
+button:active { transform: scale(0.95); }
+
+#loading {
+    margin-top: 1rem; color: var(--pitch-color); display: none;
+    font-weight: 600; font-size: 1.2rem;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse { from { opacity: 0.5; } to { opacity: 1; } }
