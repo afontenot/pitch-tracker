@@ -1,6 +1,8 @@
 ## Real Time Web-based Pitch Tracker
 
-A pitch tracker in pure JS. Based on the SWIPE algorithm as implemented
+A pitch tracker in pure JS. Based on the
+[SWIPE algorithm](https://ufdcimages.uflib.ufl.edu/UF/E0/02/15/89/00001/camacho_a.pdf)
+as implemented
 [by Peter Meier and Sebastian Strahl](https://github.com/groupmm/real_time_swipe/blob/main/src/rtswipe/rtswipe.py),
 i.e. RT-SWIPE, with some simplifications for single-channel web based use.
 
